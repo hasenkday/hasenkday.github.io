@@ -1,0 +1,8 @@
+import styles from './{{name}}.module.css' import { cn } from '@/lib/cn' type
+{{pascalCase name}}Props = { className?: string } export function
+{{pascalCase name}}({ className }:
+{{pascalCase name}}Props) { return (
+<div className='{cn(styles.root,' className)}>
+  {{pascalCase name}}
+</div>
+) }

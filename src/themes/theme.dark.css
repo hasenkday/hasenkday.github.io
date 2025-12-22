@@ -1,0 +1,15 @@
+/**
+ * ============================================================
+ * THEME — DARK
+ * Overrides only what changes
+ * ============================================================
+ */
+
+@theme {
+  /* NEUTRALS */
+  --color-dark: #ffffff;
+  --color-light: #1a1a1a;
+
+  /* BRAND COLORS */
+  --color-primary: #9c6edb;
+}

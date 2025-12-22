@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+
+/* Base theme */
+@import './theme.base.css';
+
+/* Optional example themes */
+/* @import "./theme.dark.css"; */

@@ -1,0 +1,13 @@
+@reference "../../../themes/index.css";
+
+.root {
+  @apply font-primary cursor-pointer;
+}
+
+.primary {
+  @apply bg-primary text-light;
+}
+
+.secondary {
+  @apply bg-secondary;
+}
