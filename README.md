@@ -1,21 +1,12 @@
-# Front-end UI Template
+# My Portfolio — Development
 
-This is a personal front-end template I use to start projects quickly — for studies, experiments, small products, and portfolio pieces.
+This repository contains the **development source** of my **personal portfolio** and reflects the structure and workflow I use as a UX/UI & Product Designer with front-end experience to design and build interface-driven products.
 
-The focus is **speed, clarity, and visual consistency**, without turning the setup into something heavy or over-engineered.
+Focused on clarity and consistency, prioritizing practical product constraints over heavy abstractions or theoretical scalability.
 
-## Stack
+**Live portfolio:** https://hasenkday.github.io/
 
-<p align="center">
-  <code>Vite</code> ·
-  <code>React</code> ·
-  <code>TypeScript</code> ·
-  <code>Tailwind CSS v4</code> ·
-  <code>CSS Modules</code> · <br />
-  <code>@theme tokens</code> ·
-  <code>shadcn/ui</code> ·
-  <code>Plop</code>
-</p>
+---
 
 ## Project structure
 
@@ -51,23 +42,17 @@ src/
 └── App.tsx                 # application entry point (router orchestration)
 ```
 
-## Usage
+<br/>
 
-```
-# Generate components using predefined templates
+<h2 align="center">Stack</h2>
 
-npm run plop
-```
-
-```
-# Install dependencies and run the project
-
-npm install
-npm run dev
-```
-
----
-<br />
 <p align="center">
-  This repository is shared for reference and personal use.
+  <code>Vite</code> ·
+  <code>React</code> ·
+  <code>TypeScript</code> ·
+  <code>Tailwind CSS v4</code> ·
+  <code>CSS Modules</code> · <br />
+  <code>@theme tokens</code> ·
+  <code>shadcn/ui</code> ·
+  <code>Plop</code>
 </p>
