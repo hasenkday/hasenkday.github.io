@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 
-export function GalleryPage() {
+export default function GalleryPage() {
   const { slug } = useParams<{ slug: string }>()
 
   return (

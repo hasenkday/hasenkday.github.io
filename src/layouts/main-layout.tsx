@@ -5,7 +5,7 @@ import Header from '@/components/organisms/header'
 
 export function MainLayout() {
   return (
-    <div className="grid min-h-screen grid-rows-[auto_1fr_auto]">
+    <div className="bg-light grid min-h-screen grid-rows-[auto_1fr_auto]">
       <Header />
       <Outlet />
       <Footer />

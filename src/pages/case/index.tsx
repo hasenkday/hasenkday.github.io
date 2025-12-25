@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 
-export function CasePage() {
+export default function CasePage() {
   const { slug } = useParams<{ slug: string }>()
 
   return (
