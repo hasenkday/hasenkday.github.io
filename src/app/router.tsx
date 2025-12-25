@@ -1,11 +1,12 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createHashRouter } from 'react-router-dom'
 
 import { MainLayout } from '@/layouts/main-layout'
 import { CasePage } from '@/pages/case'
+import { GalleryPage } from '@/pages/gallery'
 import { HomePage } from '@/pages/home'
 import { NotFoundPage } from '@/pages/not-found'
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     element: <MainLayout />,
     children: [
@@ -14,8 +15,12 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: '/case/:slug',
+        path: '/cases/:slug',
         element: <CasePage />,
+      },
+      {
+        path: '/gallery',
+        element: <GalleryPage />,
       },
       {
         path: '*',

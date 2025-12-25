@@ -5,7 +5,7 @@
  * ============================================================
  */
 
-@theme {
+html.dark {
   /* NEUTRALS */
   --color-dark: #ffffff;
   --color-light: #1a1a1a;

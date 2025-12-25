@@ -1,7 +1,168 @@
+@import './theme.light.css';
+@import './theme.dark.css';
+
 @import 'tailwindcss';
 
-/* Base theme */
-@import './theme.base.css';
+@layer utilities {
+  .page-section {
+    width: 100%;
+  }
 
-/* Optional example themes */
-/* @import "./theme.dark.css"; */
+  .section-container {
+    max-width: 84rem; /* 1344px */
+    margin-inline: auto;
+  }
+}
+
+@layer base {
+  h1 {
+    font-size: var(--text-h1);
+    font-family: var(--font-primary);
+    letter-spacing: var(--tracking-md);
+    line-height: clamp(var(--leading-md), var(--leading-md), var(--leading-xs));
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: var(--text-h2);
+    font-family: var(--font-primary);
+    letter-spacing: var(--tracking-sm);
+    line-height: var(--leading-sm);
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: var(--text-h3);
+    font-family: var(--font-primary);
+    letter-spacing: var(--tracking-sm);
+    line-height: var(--leading-md);
+    font-weight: 600;
+  }
+
+  h4 {
+    font-size: var(--text-h4);
+    font-family: var(--font-primary);
+    letter-spacing: var(--tracking-xs);
+    line-height: var(--leading-md);
+    font-weight: 600;
+  }
+
+  h5 {
+    font-size: var(--text-h5);
+    font-family: var(--font-primary);
+    letter-spacing: var(--tracking-xs);
+    line-height: var(--leading-md);
+    font-weight: 400;
+  }
+
+  p {
+    font-size: var(--text-md);
+    font-family: var(--font-secondary);
+    letter-spacing: var(--tracking-xs);
+    line-height: var(--leading-md);
+    font-weight: 500;
+  }
+
+  /* Use with prop data-size="sm" */
+  p[data-size='sm'] {
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-sm);
+    line-height: var(--leading-md);
+    font-weight: 500;
+  }
+
+  /* Use with prop data-size="xs" */
+  p[data-size='xs'],
+  small {
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-md);
+    line-height: var(--leading-md);
+    font-weight: 500;
+  }
+
+  ul,
+  ol {
+    letter-spacing: var(--list-spacing);
+    line-height: var(--leading-md);
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: 1.25em;
+  }
+
+  ol {
+    list-style-type: decimal;
+    padding-left: 1.25em;
+  }
+
+  /* Paragraph spacings */
+  li + li {
+    margin-top: 0.5em;
+  }
+
+  h1 + h1 {
+    margin-top: clamp(0.75em, 0.8em, 0.83em);
+  }
+
+  h2 + h2,
+  h3 + h3,
+  h4 + h4,
+  h5 + h5,
+  p + p {
+    margin-top: 1em;
+  }
+
+  /* Text colors */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: var(--color-dark);
+  }
+
+  p,
+  small,
+  ul,
+  li,
+  ol {
+    color: color-mix(in srgb, var(--color-dark) 80%, transparent);
+  }
+}
+
+html {
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+* {
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
+}
+
+html.theme-transition,
+html.theme-transition * {
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.theme-transition,
+  html.theme-transition * {
+    transition: none !important;
+  }
+}
