@@ -2,6 +2,10 @@
 @import './theme.dark.css';
 
 @import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
 
 @layer utilities {
   .page-section {
@@ -18,7 +22,7 @@
   h1 {
     font-size: var(--text-h1);
     font-family: var(--font-primary);
-    letter-spacing: var(--tracking-md);
+    letter-spacing: var(--tracking-sm);
     line-height: clamp(var(--leading-md), var(--leading-md), var(--leading-xs));
     font-weight: 600;
   }
@@ -42,7 +46,7 @@
   h4 {
     font-size: var(--text-h4);
     font-family: var(--font-primary);
-    letter-spacing: var(--tracking-xs);
+    letter-spacing: var(--tracking-sm);
     line-height: var(--leading-md);
     font-weight: 600;
   }
@@ -50,7 +54,7 @@
   h5 {
     font-size: var(--text-h5);
     font-family: var(--font-primary);
-    letter-spacing: var(--tracking-xs);
+    letter-spacing: var(--tracking-sm);
     line-height: var(--leading-md);
     font-weight: 400;
   }

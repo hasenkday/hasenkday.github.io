@@ -5,6 +5,7 @@ import CasePage from '@/pages/case'
 import GalleryPage from '@/pages/gallery'
 import HomePage from '@/pages/home'
 import NotFoundPage from '@/pages/not-found'
+import PlaygroundPage from '@/pages/playground'
 
 export const router = createHashRouter([
   {
@@ -21,6 +22,10 @@ export const router = createHashRouter([
       {
         path: '/gallery',
         element: <GalleryPage />,
+      },
+      {
+        path: '/playground',
+        element: <PlaygroundPage />,
       },
       {
         path: '*',

@@ -17,18 +17,13 @@ module.exports = function (plop) {
     actions: [
       {
         type: 'add',
-        path: 'src/components/{{layer}}/{{name}}/{{name}}.tsx',
-        templateFile: 'plop-templates/component.tsx.hbs',
+        path: 'src/components/{{layer}}/{{kebabCase name}}/index.tsx',
+        templateFile: 'plop-templates/index.tsx.hbs',
       },
       {
         type: 'add',
-        path: 'src/components/{{layer}}/{{name}}/{{name}}.module.css',
+        path: 'src/components/{{layer}}/{{kebabCase name}}/{{kebabCase name}}.module.css',
         templateFile: 'plop-templates/component.module.css.hbs',
-      },
-      {
-        type: 'add',
-        path: 'src/components/{{layer}}/{{name}}/index.ts',
-        templateFile: 'plop-templates/index.ts.hbs',
       },
     ],
   })

@@ -5,6 +5,7 @@ This repository contains the **development source** of my **personal portfolio**
 Focused on clarity and consistency, prioritizing practical product constraints over heavy abstractions or theoretical scalability.
 
 **Live portfolio:** https://hasenkday.github.io/
+**Components playground: ** https://hasenkday.github.io/#/playground
 
 ---
 
