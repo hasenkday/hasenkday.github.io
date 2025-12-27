@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 
 import { Link } from 'react-router-dom'
 
@@ -7,10 +7,10 @@ import { SunIcon } from '@/components/icons'
 import { toggleTheme } from '@/hooks/use-theme'
 
 import { NavItems } from './nav-items'
-import HeaderSideNav from './side-nav'
+// import HeaderSideNav from './side-nav'
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false)
+  // const [isOpen, setIsOpen] = useState(false)
 
   return (
     <header className="bg-light border-dark/10 sticky top-0 border-b">
@@ -49,7 +49,7 @@ export default function Header() {
         <button
           type="button"
           aria-label="Open menu"
-          onClick={() => setIsOpen(true)}
+          // onClick={() => setIsOpen(true)}
           className="sm:hidden"
         >
           ☰
@@ -57,7 +57,7 @@ export default function Header() {
       </div>
 
       {/* Overlay  */}
-      {isOpen && <HeaderSideNav />}
+      {/* {isOpen && <HeaderSideNav />} */}
     </header>
   )
 }
