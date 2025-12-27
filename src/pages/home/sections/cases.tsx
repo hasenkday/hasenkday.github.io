@@ -31,7 +31,7 @@ export default function CasesSection() {
           >
             <div className="p-6 md:p-8">
               <p className="md:text-h3 text-light">Ticomia - Formaturas App</p>
-              <p className="text-light md:text-md mt-4 text-sm">
+              <p className="text-light/80 md:text-md mt-4 text-sm">
                 Mobile B2C app adapting complex flows to a mobile-first experience, balancing
                 clarity, trust, and ease of use in real purchase scenarios.
               </p>
