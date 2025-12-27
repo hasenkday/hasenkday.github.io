@@ -1,21 +1,17 @@
-import { cn } from '@/lib/cn'
+import * as React from 'react'
+
+import { cn } from '@/lib/utils'
 
 import styles from './button.module.css'
 
-type ButtonProps = {
-  variant?: 'primary' | 'secondary'
-} & React.ButtonHTMLAttributes<HTMLButtonElement>
+type ButtonVariant = 'primary' | 'secondary' | 'ghost'
+type ButtonSize = 'sm' | 'md' | 'icon'
 
-export function Button({ variant = 'primary', className, ...props }: ButtonProps) {
-  return (
-    <button
-      className={cn(
-        'inline-flex items-center justify-center rounded-md px-4 py-2 transition',
-        styles.root,
-        styles[variant],
-        className
-      )}
-      {...props}
-    />
-  )
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: ButtonVariant
+  size?: ButtonSize
+}
+
+export function Button({ variant = 'primary', size = 'md', className, ...props }: ButtonProps) {
+  return <button {...props} className={cn(styles.root, styles[variant], styles[size], className)} />
 }

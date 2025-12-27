@@ -1,1 +1,17 @@
 @reference "../../../themes/index.css";
+
+.root {
+  @apply inline-flex items-center rounded-full px-3 py-1 text-xs;
+}
+
+.primary {
+  @apply bg-primary text-light;
+}
+
+.secondary {
+  @apply bg-secondary text-light;
+}
+
+.ghost {
+  @apply text-dark border-dark/20 border bg-transparent;
+}

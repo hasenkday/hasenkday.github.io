@@ -1,13 +1,31 @@
 @reference "../../../themes/index.css";
 
 .root {
-  @apply font-primary cursor-pointer;
+  @apply focus-visible:ring-primary inline-flex items-center justify-center gap-2 rounded-md transition-colors focus-visible:ring-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50;
 }
 
+/* Variants */
 .primary {
-  @apply bg-primary text-light;
+  @apply bg-primary text-light hover:bg-primary/90;
 }
 
 .secondary {
-  @apply bg-secondary;
+  @apply bg-secondary text-light hover:bg-secondary/90;
+}
+
+.ghost {
+  @apply text-dark hover:bg-dark/10 bg-transparent;
+}
+
+/* Sizes */
+.md {
+  @apply h-10 px-4 text-sm;
+}
+
+.sm {
+  @apply h-8 px-3 text-xs;
+}
+
+.icon {
+  @apply h-10 w-10 p-0;
 }

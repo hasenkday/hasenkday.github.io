@@ -1,1 +1,5 @@
 @reference "../../../themes/index.css";
+
+.root {
+  @apply flex items-center gap-3;
+}

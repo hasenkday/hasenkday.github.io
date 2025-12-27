@@ -1,1 +1,9 @@
 @reference "../../../themes/index.css";
+
+.root {
+  @apply flex flex-col gap-2;
+}
+
+.trigger {
+  @apply border-dark/20 border;
+}

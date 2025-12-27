@@ -12,7 +12,7 @@ export default defineConfig([
   {
     files: ['**/*.{ts,tsx}'],
     plugins: {
-      import: importPlugin, // 👈 novo
+      import: importPlugin,
     },
     extends: [
       js.configs.recommended,
@@ -26,13 +26,11 @@ export default defineConfig([
       globals: globals.browser,
     },
     settings: {
-      // 👇 permite resolver @/ via tsconfig
       'import/resolver': {
         typescript: {},
       },
     },
     rules: {
-      // 👇 ordenação de imports
       'import/order': [
         'error',
         {

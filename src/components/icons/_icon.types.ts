@@ -1,14 +1,15 @@
 import type * as React from 'react'
 
 export type IconVariant =
+  | 'light'
+  | 'dark'
   | 'primary'
   | 'secondary'
   | 'tertiary'
-  | 'danger'
+  | 'info'
   | 'warning'
+  | 'danger'
   | 'success'
-  | 'dark'
-  | 'light'
   | 'linkedin'
 
 export type IconProps = React.SVGProps<SVGSVGElement> & {

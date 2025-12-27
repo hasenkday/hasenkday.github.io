@@ -1,13 +1,14 @@
 import type { IconVariant } from './_icon.types'
 
 export const ICON_VARIANT_COLOR: Record<IconVariant, string> = {
+  light: 'var(--color-light)',
+  dark: 'var(--color-dark)',
   primary: 'var(--color-primary)',
   secondary: 'var(--color-secondary)',
   tertiary: 'var(--color-tertiary)',
-  danger: 'var(--color-error)',
+  info: 'var(--color-info)',
   warning: 'var(--color-warning)',
+  danger: 'var(--color-danger)',
   success: 'var(--color-success)',
-  dark: 'var(--color-dark)',
-  light: 'var(--color-light)',
   linkedin: '#0A66C2',
 }

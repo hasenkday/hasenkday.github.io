@@ -1,9 +1,15 @@
-import { cn } from '@/lib/cn'
+import { cn } from '@/lib/utils'
 
 import styles from './tag.module.css'
 
-type TagProps = { className?: string }
+type TagVariant = 'primary' | 'secondary' | 'ghost'
 
-export function Tag({ className }: TagProps) {
-  return <div className={cn(styles.root, className)}>Tag</div>
+type TagProps = {
+  children: React.ReactNode
+  variant?: TagVariant
+  className?: string
+}
+
+export function Tag({ children, variant = 'primary', className }: TagProps) {
+  return <span className={cn(styles.root, styles[variant], className)}>{children}</span>
 }

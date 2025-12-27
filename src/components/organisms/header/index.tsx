@@ -13,7 +13,7 @@ export default function Header() {
   // const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="bg-light border-dark/10 sticky top-0 border-b">
+    <header className="bg-light border-dark/10 sticky top-0 z-50 border-b">
       <div className="page-section flex items-center justify-between p-4 md:px-12 md:py-5">
         {/* Logo / Brand */}
         <div>

@@ -1,1 +1,17 @@
 @reference "../../../themes/index.css";
+
+.root {
+  @apply flex flex-col gap-2;
+}
+
+.textarea {
+  @apply border-dark/20 min-h-[96px] resize-y border;
+}
+
+.error {
+  @apply border-danger;
+}
+
+.errorText {
+  @apply text-danger text-xs;
+}

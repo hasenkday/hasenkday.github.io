@@ -1,0 +1,25 @@
+@reference "../../../themes/index.css";
+
+.root {
+  @apply flex flex-col gap-8;
+}
+
+.group {
+  @apply flex list-none flex-col gap-2 md:gap-3;
+}
+
+.groupTitle {
+  @apply text-dark/40 text-center text-xs font-medium tracking-wide uppercase md:-ml-5 md:pb-0 md:text-start;
+}
+
+.buttonsGroup {
+  @apply flex flex-row flex-wrap items-baseline justify-center gap-0 md:flex-col md:items-start md:justify-start;
+}
+
+.item {
+  @apply text-dark/80 hover:text-dark hover:bg-dark/10 cursor-pointer rounded-md px-3 py-2 text-left text-sm transition-colors md:-ml-3;
+}
+
+.empty {
+  @apply text-dark/40 text-sm italic;
+}

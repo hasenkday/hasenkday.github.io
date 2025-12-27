@@ -1,0 +1,13 @@
+@reference "../../../themes/index.css";
+
+.root {
+  @apply bg-dark/20;
+}
+
+.horizontal {
+  @apply h-px w-full;
+}
+
+.vertical {
+  @apply h-full w-px;
+}
