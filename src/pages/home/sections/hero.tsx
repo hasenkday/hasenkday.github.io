@@ -1,24 +1,12 @@
-import { Link } from 'react-router-dom'
-
 export default function HeroSection() {
   return (
     <div className="page-section">
-      <div className="section-container px-4 py-8 text-center md:px-12 md:py-8">
-        Hero
-        <ul className="space-y-2">
-          <li>
-            <Link to="/cases/case1" className="text-primary underline">
-              {' '}
-              case 1
-            </Link>
-          </li>
-
-          <li>
-            <Link to="/cases/case2" className="text-primary underline">
-              case 2
-            </Link>
-          </li>
-        </ul>
+      <div className="section-container flex flex-col items-center gap-4 px-8 pt-12 pb-5 text-center md:px-12 md:pt-18 md:pb-8">
+        <span className="text-subhead font-light">Hi there!</span>
+        <h1 className="text-h2 leading-sm max-w-full font-normal md:max-w-[672px]">
+          I design <strong>digital products</strong> and enjoy turning <u>complex problems</u> into
+          things people can <strong>actually use</strong>.
+        </h1>
       </div>
     </div>
   )

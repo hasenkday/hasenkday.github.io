@@ -1,0 +1,13 @@
+@reference "../../../themes/index.css";
+
+.root {
+  @apply block h-full w-full;
+}
+
+.cover {
+  @apply object-cover;
+}
+
+.contain {
+  @apply object-contain;
+}

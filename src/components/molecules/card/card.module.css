@@ -1,1 +1,5 @@
 @reference "../../../themes/index.css";
+
+.root {
+  @apply relative h-full w-full overflow-hidden rounded-xl shadow-sm transition hover:shadow-md;
+}
