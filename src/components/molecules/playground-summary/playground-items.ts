@@ -1,16 +1,16 @@
 export const playgroundItems = {
   atoms: [
-    { id: 'button', label: 'Button' },
-    { id: 'input-field', label: 'InputField' },
-    { id: 'textarea-field', label: 'TextareaField' },
-    { id: 'checkbox-field', label: 'CheckboxField' },
-    { id: 'radio-field', label: 'RadioField' },
-    { id: 'select-field', label: 'SelectField' },
-    { id: 'switch-field', label: 'SwitchField' },
-    { id: 'separator', label: 'Separator' },
-    { id: 'tag', label: 'Tag' },
+    { id: 'playground-atom-button', label: 'Button' },
+    { id: 'playground-atom-input-field', label: 'InputField' },
+    { id: 'playground-atom-textarea-field', label: 'TextareaField' },
+    { id: 'playground-atom-checkbox-field', label: 'CheckboxField' },
+    { id: 'playground-atom-radio-field', label: 'RadioField' },
+    { id: 'playground-atom-select-field', label: 'SelectField' },
+    { id: 'playground-atom-switch-field', label: 'SwitchField' },
+    { id: 'playground-atom-separator', label: 'Separator' },
+    { id: 'playground-atom-tag', label: 'Tag' },
   ],
   molecules: [
-    { id: 'card', label: 'Card' }, // future
+    { id: 'playground-molecule-card', label: 'Card' }, // future
   ],
 }
