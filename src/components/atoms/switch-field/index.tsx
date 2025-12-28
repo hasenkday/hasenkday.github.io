@@ -18,10 +18,21 @@ export function SwitchField({
 }: SwitchFieldProps) {
   const id = React.useId()
 
-  /* ---------- ONLY ---------- */
-  if (variant === 'only') {
+  /* ---------- OUTLINED ---------- */
+  if (variant === 'outlined') {
     return (
-      <Switch id={id} checked={checked} onCheckedChange={onCheckedChange} className={className} />
+      <Label
+        htmlFor={id}
+        className={cn(
+          styles.wrapper,
+          variant === 'outlined' && styles.outlined,
+          checked && variant === 'outlined' && styles.active,
+          className
+        )}
+      >
+        <Switch id={id} checked={checked} onCheckedChange={onCheckedChange} />
+        {label && <p>{label}</p>}
+      </Label>
     )
   }
 
@@ -34,25 +45,16 @@ export function SwitchField({
           checked={checked}
           onCheckedChange={onCheckedChange}
           className={styles.iconSwitch}
-        >
+        />
+        <div className={cn(styles.icon, checked && styles.iconChecked)}>
           {checked ? onIcon : offIcon}
-        </Switch>
+        </div>
       </div>
     )
   }
 
-  /* ---------- DEFAULT / OUTLINED ---------- */
+  /* ---------- DEFAULT ---------- */
   return (
-    <div
-      className={cn(
-        styles.wrapper,
-        variant === 'outlined' && styles.outlined,
-        checked && variant === 'outlined' && styles.active,
-        className
-      )}
-    >
-      <Switch id={id} checked={checked} onCheckedChange={onCheckedChange} />
-      {label && <Label htmlFor={id}>{label}</Label>}
-    </div>
+    <Switch id={id} checked={checked} onCheckedChange={onCheckedChange} className={className} />
   )
 }

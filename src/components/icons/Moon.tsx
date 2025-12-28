@@ -10,7 +10,7 @@ const Icon = ({ size = 20, variant = 'dark', ...props }: IconProps) => {
       width={size}
       height={size}
       fill={ICON_VARIANT_COLOR[variant]}
-      viewBox="0 0 24 24"
+      viewBox="0 0 20 20"
       {...props}
     >
       <path

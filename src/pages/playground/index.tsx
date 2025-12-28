@@ -259,11 +259,7 @@ export default function PlaygroundPage() {
               onCheckedChange={setSwitcherIsPublic}
             />
             ---
-            <SwitchField
-              variant="only"
-              checked={switcherDarkMode}
-              onCheckedChange={setSwitcherDarkMode}
-            />
+            <SwitchField checked={switcherDarkMode} onCheckedChange={setSwitcherDarkMode} />
             ---
             <SwitchField
               variant="icon"
