@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 
 import { Button } from '@/components/atoms/button'
 import { CheckboxField } from '@/components/atoms/checkbox-field'
@@ -9,14 +9,21 @@ import { Separator } from '@/components/atoms/separator'
 import { SwitchField } from '@/components/atoms/switch-field'
 import { Tag } from '@/components/atoms/tag'
 import { TextareaField } from '@/components/atoms/textarea-field'
-import { GithubIcon } from '@/components/icons'
+import { GithubIcon, MoonIcon, SunIcon } from '@/components/icons'
 import { PlaygroundSummary } from '@/components/molecules/playground-summary'
 import { cn } from '@/lib/utils'
 
 export default function PlaygroundPage() {
-  const [checked, setChecked] = React.useState(false)
-  const [plan, setPlan] = React.useState('free')
-  const [enabled, setEnabled] = React.useState(false)
+  const [country, setCountry] = useState('br')
+  const [checkboxValues, setCheckboxValues] = useState<string[]>([])
+  const [checkboxSizes, setCheckboxSizes] = useState<string[]>([])
+  const [checkboxChecked, setCheckboxChecked] = useState(false)
+  const [checkboxEnabled, setCheckboxEnabled] = useState(false)
+  const [radioPlan, setRadioPlan] = useState('free')
+  const [radioSize, setRadioSize] = useState('medium')
+  const [switcherIsDark, setSwitcherIsDark] = useState(false)
+  const [switcherDarkMode, setSwitcherDarkMode] = useState(false)
+  const [switcherIsPublic, setSwitcherIsPublic] = useState(false)
 
   const contentSectionClasses = 'items-center px-4 py-8 md:px-12 md:pt-18 md:pb-12'
 
@@ -63,12 +70,17 @@ export default function PlaygroundPage() {
           id="input-field"
           className={cn(contentSectionClasses, 'flex flex-col items-center gap-8')}
         >
-          <h2>Atom: InputField</h2>
+          <h2>✅ Atom: InputField</h2>
 
-          <div className="flex flex-wrap items-center justify-center gap-5">
+          <div className="flex max-w-md flex-col gap-6">
             <InputField label="Email" placeholder="you@example.com" />
-            <InputField label="Name" placeholder="Your name" error="This field is required" />
-            <InputField placeholder="No label example" />
+            <InputField label="Name" placeholder="Your name" textAlign="center" />
+            <InputField label="Company" placeholder="ACME Inc." defaultValue="Filled input" />
+            <InputField
+              label="Required field"
+              placeholder="Type something"
+              error="This field is required"
+            />
           </div>
         </div>
 
@@ -76,11 +88,20 @@ export default function PlaygroundPage() {
           id="textarea-field"
           className={cn(contentSectionClasses, 'flex flex-col items-center gap-8')}
         >
-          <h2>Atom: TextareaField</h2>
+          <h2>✅ Atom: TextareaField</h2>
 
           <div className="flex flex-wrap items-center justify-center gap-5">
             <TextareaField label="Message" placeholder="Write your message here" />
-            <TextareaField label="Feedback" error="Minimum 20 characters" />
+            <TextareaField
+              label="Feedback"
+              placeholder="Tell us what you think"
+              defaultValue="Pre-filled content"
+            />
+            <TextareaField
+              label="Error example"
+              placeholder="Minimum 20 characters"
+              error="Minimum 20 characters required"
+            />
           </div>
         </div>
 
@@ -88,13 +109,40 @@ export default function PlaygroundPage() {
           id="checkbox-field"
           className={cn(contentSectionClasses, 'flex flex-col items-center gap-8')}
         >
-          <h2>Atom: CheckboxField</h2>
+          <h2>✅ Atom: CheckboxField</h2>
 
           <div className="flex flex-wrap items-center justify-center gap-5">
             <CheckboxField
-              label="Controlled checkbox"
-              checked={checked}
-              onCheckedChange={setChecked}
+              label="Enable notifications"
+              checked={checkboxChecked}
+              onCheckedChange={setCheckboxChecked}
+            />
+            --- multi
+            <CheckboxField
+              options={[
+                { value: 'design', label: 'Design' },
+                { value: 'dev', label: 'Development' },
+              ]}
+              value={checkboxValues}
+              onValueChange={setCheckboxValues}
+            />
+            --- variant button single
+            <CheckboxField
+              variant="button"
+              label="Enable feature"
+              checked={checkboxEnabled}
+              onCheckedChange={setCheckboxEnabled}
+            />
+            -- variant button multi
+            <CheckboxField
+              variant="button"
+              options={[
+                { value: 'small', label: 'Small' },
+                { value: 'medium', label: 'Medium' },
+                { value: 'large', label: 'Large' },
+              ]}
+              value={checkboxSizes}
+              onValueChange={setCheckboxSizes}
             />
           </div>
         </div>
@@ -103,17 +151,27 @@ export default function PlaygroundPage() {
           id="radio-field"
           className={cn(contentSectionClasses, 'flex flex-col items-center gap-8')}
         >
-          <h2>Atom: RadioField</h2>
+          <h2>✅ Atom: RadioField</h2>
 
           <div className="flex flex-wrap items-center justify-center gap-5">
             <RadioField
-              label="Choose a plan"
-              value={plan}
-              onValueChange={setPlan}
               options={[
                 { value: 'free', label: 'Free' },
                 { value: 'pro', label: 'Pro' },
               ]}
+              value={radioPlan}
+              onValueChange={setRadioPlan}
+            />
+            --- button variant
+            <RadioField
+              variant="button"
+              options={[
+                { value: 'small', label: 'Small' },
+                { value: 'medium', label: 'Medium' },
+                { value: 'large', label: 'Large' },
+              ]}
+              value={radioSize}
+              onValueChange={setRadioSize}
             />
           </div>
         </div>
@@ -122,7 +180,7 @@ export default function PlaygroundPage() {
           id="select-field"
           className={cn(contentSectionClasses, 'flex flex-col items-center gap-8')}
         >
-          <h2>Atom: SelectField</h2>
+          <h2>✅ Atom: SelectField</h2>
 
           <div className="flex flex-wrap items-center justify-center gap-5">
             <SelectField
@@ -131,9 +189,30 @@ export default function PlaygroundPage() {
               options={[
                 { value: 'br', label: 'Brazil' },
                 { value: 'us', label: 'United States' },
-                { value: 'de', label: 'Germany' },
               ]}
             />
+
+            <SelectField
+              value={country}
+              onValueChange={setCountry}
+              options={[
+                { value: 'br', label: 'Brazil' },
+                { value: 'us', label: 'United States' },
+              ]}
+            />
+
+            <div className="flex items-center">
+              <SelectField
+                variant="ghost"
+                value="br"
+                options={[
+                  { value: 'br', label: 'BR' },
+                  { value: 'us', label: 'US' },
+                ]}
+              />
+
+              <InputField placeholder="Phone number" />
+            </div>
           </div>
         </div>
 
@@ -170,12 +249,29 @@ export default function PlaygroundPage() {
           id="switch-field"
           className={cn(contentSectionClasses, 'flex flex-col items-center gap-8')}
         >
-          <h2>Atom: SwitchField</h2>
+          <h2>✅ Atom: SwitchField</h2>
 
           <div className="flex flex-wrap items-center justify-center gap-5">
-            <SwitchField label="Enable notifications" />
-            <SwitchField label="Dark mode" checked />
-            <SwitchField label="Controlled switch" checked={enabled} onCheckedChange={setEnabled} />
+            <SwitchField
+              variant="outlined"
+              label="Public profile"
+              checked={switcherIsPublic}
+              onCheckedChange={setSwitcherIsPublic}
+            />
+            ---
+            <SwitchField
+              variant="only"
+              checked={switcherDarkMode}
+              onCheckedChange={setSwitcherDarkMode}
+            />
+            ---
+            <SwitchField
+              variant="icon"
+              checked={switcherIsDark}
+              onCheckedChange={setSwitcherIsDark}
+              offIcon={<SunIcon />}
+              onIcon={<MoonIcon />}
+            />
           </div>
         </div>
       </div>

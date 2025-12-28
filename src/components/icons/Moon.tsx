@@ -9,7 +9,7 @@ const Icon = ({ size = 20, variant = 'dark', ...props }: IconProps) => {
       xmlns="http://www.w3.org/2000/svg"
       width={size}
       height={size}
-      stroke={ICON_VARIANT_COLOR[variant]}
+      fill={ICON_VARIANT_COLOR[variant]}
       viewBox="0 0 24 24"
       {...props}
     >

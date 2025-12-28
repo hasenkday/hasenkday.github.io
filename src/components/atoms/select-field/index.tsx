@@ -9,34 +9,22 @@ import {
 import { cn } from '@/lib/utils'
 
 import styles from './select-field.module.css'
-
-type Option = {
-  value: string
-  label: string
-}
-
-type SelectFieldProps = {
-  label?: string
-  placeholder?: string
-  options: Option[]
-  value?: string
-  onValueChange?: (value: string) => void
-  className?: string
-}
+import type { SelectFieldProps } from './types'
 
 export function SelectField({
   label,
   placeholder,
   options,
+  variant = 'default',
   className,
   ...props
 }: SelectFieldProps) {
   return (
     <div className={cn(styles.root, className)}>
-      {label && <Label>{label}</Label>}
+      {label && <Label className="sr-only">{label}</Label>}
 
       <Select {...props}>
-        <SelectTrigger className={styles.trigger}>
+        <SelectTrigger className={cn(styles.trigger, styles[`variant-${variant}`])}>
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
 

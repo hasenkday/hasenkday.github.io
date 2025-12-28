@@ -1,17 +1,61 @@
 @reference "../../../themes/index.css";
 
 .root {
-  @apply flex flex-col gap-2;
+  @apply flex flex-col gap-1.5;
 }
 
+/* Wrapper = mesmo field container do input */
+.wrapper {
+  @apply border-tertiary bg-tertiary/10 relative overflow-hidden rounded-lg border transition-shadow;
+}
+
+/* Ring / focus */
+.wrapper:focus-within {
+  box-shadow: 0 0 0 2px rgba(5, 4, 7, 1);
+}
+
+/* Textarea limpo */
 .textarea {
-  @apply border-dark/20 min-h-[96px] resize-y border;
+  @apply text-dark placeholder:text-dark/40 min-h-[130px] w-full resize-y rounded-none border-0 bg-transparent px-3 py-3 text-sm outline-none md:min-h-[180px] md:px-4;
 }
 
+/* Quando tem valor */
+.filled .textarea {
+  @apply text-md;
+}
+
+/* Cor do resize handle */
+.textarea {
+  resize: vertical;
+}
+
+/* WebKit resize handle */
+.textarea::-webkit-resizer {
+  filter: opacity(0.6);
+}
+
+/* Error */
 .error {
   @apply border-danger;
 }
 
+.error:focus-within {
+  box-shadow: 0 0 0 1px rgba(220, 38, 38, 0.6);
+}
+
 .errorText {
   @apply text-danger text-xs;
+}
+
+/* Text alignment */
+.align-start .textarea {
+  @apply text-left;
+}
+
+.align-center .textarea {
+  @apply text-center;
+}
+
+.align-end .textarea {
+  @apply text-right;
 }

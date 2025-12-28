@@ -1,9 +1,36 @@
 @reference "../../../themes/index.css";
 
 .root {
-  @apply flex flex-col gap-2;
+  @apply flex flex-col;
 }
 
+/* ===== DEFAULT VARIANT (input-like) ===== */
+
 .trigger {
-  @apply border-dark/20 border;
+  @apply border-tertiary bg-tertiary/10 text-dark relative flex h-12 items-center overflow-hidden rounded-lg border px-3 text-sm transition-shadow md:h-[52px] md:px-4;
+}
+
+/* Ring externo (igual input / textarea) */
+.trigger:focus-visible {
+  box-shadow: 0 0 0 2px rgba(5, 4, 7, 1);
+}
+
+/* Placeholder */
+.trigger [data-placeholder] {
+  @apply text-dark/40;
+}
+
+/* ===== GHOST VARIANT ===== */
+
+.variant-ghost {
+  @apply h-auto rounded-md border-0 bg-transparent p-2 shadow-none;
+}
+
+.variant-ghost:focus-visible {
+  box-shadow: none;
+}
+
+/* Ajustes de texto ghost */
+.variant-ghost {
+  @apply text-dark/60 text-sm;
 }

@@ -1,5 +1,46 @@
 @reference "../../../themes/index.css";
 
-.root {
+/* ===== Plain checkbox (default) ===== */
+
+.plain {
   @apply flex items-center gap-2;
+}
+
+/* ===== Group ===== */
+
+.group {
+  @apply flex flex-wrap gap-2;
+}
+
+/* ===== Button variant ===== */
+
+.button {
+  @apply border-tertiary bg-light text-dark flex h-10 cursor-pointer items-center justify-center rounded-lg border px-4 text-sm;
+
+  transition:
+    background-color 160ms ease-out,
+    border-color 160ms ease-out,
+    color 120ms ease-out,
+    transform 120ms ease-out;
+}
+
+/* Ring externo */
+.button:focus-visible {
+  box-shadow: 0 0 0 2px rgba(5, 4, 7, 1);
+}
+
+/* Checked */
+.checked {
+  @apply bg-tertiary border-primary/60;
+
+  transform: translateY(0);
+}
+
+/* Hover */
+.button:hover {
+  @apply bg-tertiary/20;
+}
+
+.button:active {
+  transform: translateY(1px) scale(0.98);
 }

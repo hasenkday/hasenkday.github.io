@@ -1,17 +1,51 @@
 @reference "../../../themes/index.css";
 
 .root {
-  @apply flex flex-col gap-2;
+  @apply flex flex-col gap-1.5;
 }
 
+/* Wrapper = campo visual */
+.wrapper {
+  @apply border-tertiary bg-tertiary/10 relative flex h-12 items-center overflow-hidden rounded-lg border transition-shadow md:h-[52px];
+}
+
+/* Ring / focus sem layout shift */
+.wrapper:focus-within {
+  box-shadow: 0 0 0 2px rgba(5, 4, 7, 1);
+}
+
+/* INPUT LIMPO */
 .input {
-  @apply border-dark/20 border;
+  @apply text-dark placeholder:text-dark/40 h-full w-full rounded-none border-0 bg-transparent px-3 text-sm outline-none md:px-4;
 }
 
+/* Quando tem valor */
+.filled .input {
+  @apply text-md;
+}
+
+/* Error */
 .error {
   @apply border-danger;
 }
 
+.error:focus-within {
+  box-shadow: 0 0 0 1px rgba(220, 38, 38, 0.6);
+}
+
 .errorText {
   @apply text-danger text-xs;
+}
+
+/* Text alignment */
+.align-start .input {
+  @apply text-left;
+}
+
+.align-center .input {
+  @apply text-center;
+}
+
+.align-end .input {
+  @apply text-right;
 }

@@ -4,13 +4,6 @@ export function initTheme() {
   if (saved === 'dark') {
     document.documentElement.classList.add('dark')
   }
-
-  if (!localStorage.getItem('theme')) {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    if (prefersDark) {
-      document.documentElement.classList.add('dark')
-    }
-  }
 }
 
 export function toggleTheme() {

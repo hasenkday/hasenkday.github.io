@@ -3,33 +3,45 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { cn } from '@/lib/utils'
 
 import styles from './radio-field.module.css'
+import type { RadioFieldProps } from './types'
 
-type Option = {
-  value: string
-  label: string
-}
+export function RadioField({
+  options,
+  value,
+  onValueChange,
+  variant = 'radio',
+  className,
+}: RadioFieldProps) {
+  if (variant === 'button') {
+    return (
+      <div className={cn(styles.group, className)}>
+        {options.map((option) => {
+          const checked = value === option.value
 
-type RadioFieldProps = {
-  label?: string
-  options: Option[]
-  value?: string
-  onValueChange?: (value: string) => void
-  className?: string
-}
+          return (
+            <button
+              key={option.value}
+              type="button"
+              className={cn(styles.button, checked && styles.checked)}
+              onClick={() => onValueChange?.(option.value)}
+            >
+              {option.label}
+            </button>
+          )
+        })}
+      </div>
+    )
+  }
 
-export function RadioField({ label, options, className, ...props }: RadioFieldProps) {
+  // default radio
   return (
-    <div className={cn(styles.root, className)}>
-      {label && <Label>{label}</Label>}
-
-      <RadioGroup {...props} className={styles.group}>
-        {options.map((option) => (
-          <div key={option.value} className={styles.item}>
-            <RadioGroupItem value={option.value} id={option.value} />
-            <Label htmlFor={option.value}>{option.label}</Label>
-          </div>
-        ))}
-      </RadioGroup>
-    </div>
+    <RadioGroup value={value} onValueChange={onValueChange} className={cn(styles.group, className)}>
+      {options.map((option) => (
+        <div key={option.value} className={styles.plain}>
+          <RadioGroupItem value={option.value} id={option.value} />
+          <Label htmlFor={option.value}>{option.label}</Label>
+        </div>
+      ))}
+    </RadioGroup>
   )
 }
