@@ -19,6 +19,10 @@
   @apply text-dark placeholder:text-dark/40 min-h-[130px] w-full resize-y rounded-none border-0 bg-transparent px-3 py-3 text-sm outline-none md:min-h-[180px] md:px-4;
 }
 
+.textarea:not(:placeholder-shown) {
+  @apply text-md text-dark;
+}
+
 /* Quando tem valor */
 .filled .textarea {
   @apply text-md;

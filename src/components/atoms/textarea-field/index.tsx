@@ -10,64 +10,44 @@ type TextAlign = 'start' | 'center' | 'end'
 
 type TextareaFieldProps = React.ComponentProps<'textarea'> & {
   label?: string
-  error?: string
+  error?: boolean
   textAlign?: TextAlign
 }
 
 export function TextareaField({
   label,
-  error,
+  error = false,
   textAlign = 'start',
   className,
   id,
   value,
   defaultValue,
-  onChange,
+  placeholder,
   ...props
 }: TextareaFieldProps) {
   const generatedId = React.useId()
   const textareaId = id ?? generatedId
 
-  const [internalValue, setInternalValue] = React.useState((value ?? defaultValue ?? '') as string)
-
-  const isControlled = value !== undefined
-  const hasValue = isControlled ? String(value).length > 0 : internalValue.length > 0
-
-  function handleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
-    if (!isControlled) {
-      setInternalValue(e.target.value)
-    }
-    onChange?.(e)
-  }
-
   return (
     <div className={styles.root}>
+      {/* Accessibility-only label */}
       {label && (
         <Label htmlFor={textareaId} className="sr-only">
           {label}
         </Label>
       )}
 
-      <div
-        className={cn(
-          styles.wrapper,
-          hasValue && styles.filled,
-          error && styles.error,
-          styles[`align-${textAlign}`]
-        )}
-      >
+      <div className={cn(styles.wrapper, error && styles.error, styles[`align-${textAlign}`])}>
         <Textarea
           id={textareaId}
           value={value}
           defaultValue={defaultValue}
-          onChange={handleChange}
+          placeholder={placeholder ?? label}
           className={cn(styles.textarea, className)}
-          aria-invalid={!!error}
+          aria-invalid={error}
           {...props}
         />
       </div>
-
-      {error && <p className={styles.errorText}>{error}</p>}
     </div>
   )
 }

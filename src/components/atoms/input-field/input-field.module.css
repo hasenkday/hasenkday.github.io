@@ -19,6 +19,10 @@
   @apply text-dark placeholder:text-dark/40 h-full w-full rounded-none border-0 bg-transparent px-3 text-sm outline-none md:px-4;
 }
 
+.input:not(:placeholder-shown) {
+  @apply text-md text-dark;
+}
+
 /* Quando tem valor */
 .filled .input {
   @apply text-md;

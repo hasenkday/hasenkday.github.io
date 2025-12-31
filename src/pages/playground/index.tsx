@@ -24,7 +24,7 @@ export default function PlaygroundPage() {
   return (
     <div
       id="playground"
-      className="grid min-h-[700px] w-full md:grid-cols-[300px_1fr] lg:grid-cols-[300px_1fr_300px]"
+      className="grid min-h-[700px] w-full md:grid-cols-[300px_1fr] lg:grid-cols-[300px_1fr]"
     >
       {/* Sidebar */}
       <aside className="border-dark/10 bg-light relative self-start overflow-hidden border-b md:h-full md:border-r md:border-b-0">

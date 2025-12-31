@@ -10,64 +10,44 @@ type TextAlign = 'start' | 'center' | 'end'
 
 type InputFieldProps = React.ComponentProps<'input'> & {
   label?: string
-  error?: string
+  error?: boolean
   textAlign?: TextAlign
 }
 
 export function InputField({
   label,
-  error,
+  error = false,
   textAlign = 'start',
   className,
   id,
   value,
   defaultValue,
-  onChange,
+  placeholder,
   ...props
 }: InputFieldProps) {
   const generatedId = React.useId()
   const inputId = id ?? generatedId
 
-  const [internalValue, setInternalValue] = React.useState((value ?? defaultValue ?? '') as string)
-
-  const isControlled = value !== undefined
-  const hasValue = isControlled ? String(value).length > 0 : internalValue.length > 0
-
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    if (!isControlled) {
-      setInternalValue(e.target.value)
-    }
-    onChange?.(e)
-  }
-
   return (
     <div className={styles.root}>
+      {/* sr-only label stays here OR can be removed if FormField handles it */}
       {label && (
         <Label htmlFor={inputId} className="sr-only">
           {label}
         </Label>
       )}
 
-      <div
-        className={cn(
-          styles.wrapper,
-          hasValue && styles.filled,
-          error && styles.error,
-          styles[`align-${textAlign}`]
-        )}
-      >
+      <div className={cn(styles.wrapper, error && styles.error, styles[`align-${textAlign}`])}>
         <Input
           id={inputId}
           value={value}
           defaultValue={defaultValue}
-          onChange={handleChange}
+          placeholder={placeholder ?? label}
           className={cn(styles.input, className)}
-          aria-invalid={!!error}
+          aria-invalid={error}
           {...props}
         />
       </div>
-
-      {error && <p className={styles.errorText}>{error}</p>}
     </div>
   )
 }

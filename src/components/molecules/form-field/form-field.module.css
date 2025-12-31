@@ -1,1 +1,21 @@
 @reference "../../../themes/index.css";
+
+.root {
+  @apply flex flex-col gap-1.5;
+}
+
+.label {
+  @apply text-sm font-medium;
+}
+
+.helperText {
+  @apply text-dark/60 text-xs;
+}
+
+.errorText {
+  @apply text-danger text-xs;
+}
+
+.required {
+  @apply text-danger;
+}
