@@ -1,50 +1,43 @@
-import { useState } from 'react'
-
 import { InputField } from '@/components/atoms/input-field'
 import { SelectField } from '@/components/atoms/select-field'
 
-export default function PlaygroundAtomSelectField() {
-  const [country, setCountry] = useState('br')
+import styles from '../playground.module.css'
 
+export default function PlaygroundAtomSelectField() {
   return (
-    <div
-      id="playground-atom-select-field"
-      className="flex flex-col items-center gap-8 px-4 py-8 md:px-12 md:pt-18 md:pb-12"
-    >
+    <section id="playground-atom-select-field" className={styles.sectionRoot}>
       <h2>Select Field</h2>
 
-      <div className="flex flex-wrap items-center justify-center gap-5">
-        <SelectField
-          label="Country"
-          placeholder="Select a country"
-          options={[
-            { value: 'br', label: 'Brazil' },
-            { value: 'us', label: 'United States' },
-          ]}
-        />
+      <div className={styles.contentWrapper}>
+        {/* Preview */}
+        <div className={styles.previewArea}>
+          <div className="flex max-w-md flex-col gap-6">
+            <SelectField
+              label="Country"
+              placeholder="Select a country"
+              options={[
+                { value: 'br', label: 'Brazil' },
+                { value: 'us', label: 'United States' },
+              ]}
+            />
 
-        <SelectField
-          value={country}
-          onValueChange={setCountry}
-          options={[
-            { value: 'br', label: 'Brazil' },
-            { value: 'us', label: 'United States' },
-          ]}
-        />
-
-        <div className="flex items-center">
-          <SelectField
-            variant="ghost"
-            value="br"
-            options={[
-              { value: 'br', label: 'BR' },
-              { value: 'us', label: 'US' },
-            ]}
-          />
-
-          <InputField placeholder="Phone number" />
+            {/* Inline / ghost example */}
+            <div className="flex max-w-full items-center gap-2 sm:w-[300px]">
+              <SelectField
+                variant="ghost"
+                value="br"
+                options={[
+                  { value: 'br', label: 'BR' },
+                  { value: 'us', label: 'US' },
+                ]}
+              />
+              <div className="w-full">
+                <InputField placeholder="Phone number" className="w-full! flex-1!" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

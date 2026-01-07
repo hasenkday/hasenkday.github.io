@@ -12,4 +12,5 @@ export type RadioFieldProps<T extends string> = {
   value: T
   onValueChange: (value: T) => void
   className?: string
+  groupClassName?: string
 }

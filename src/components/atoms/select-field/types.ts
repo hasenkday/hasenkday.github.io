@@ -1,16 +1,15 @@
-export type SelectOption = {
-  value: string
+export type SelectOption<T extends string> = {
+  value: T
   label: string
 }
 
-export type SelectVariant = 'default' | 'ghost'
-
-export type SelectFieldProps = {
+export type SelectFieldProps<T extends string = string> = {
   label?: string
   placeholder?: string
-  options: SelectOption[]
-  value?: string
-  onValueChange?: (value: string) => void
-  variant?: SelectVariant
+  options: SelectOption<T>[]
+  value?: T
+  onValueChange?: (value: T) => void
+  variant?: 'default' | 'ghost'
   className?: string
+  triggerClassName?: string
 }

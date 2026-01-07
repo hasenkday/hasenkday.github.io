@@ -12,6 +12,7 @@ export function RadioField<T extends string>({
   onValueChange,
   variant = 'radio',
   className,
+  groupClassName,
 }: RadioFieldProps<T>) {
   return (
     <div className={cn(styles.root, className)}>
@@ -62,7 +63,11 @@ export function RadioField<T extends string>({
 
       {/* ===== RADIO (DEFAULT) ===== */}
       {variant === 'radio' && (
-        <RadioGroup value={value} onValueChange={onValueChange} className={styles.group}>
+        <RadioGroup
+          value={value}
+          onValueChange={onValueChange}
+          className={cn(styles.group, groupClassName)}
+        >
           {options.map((option) => (
             <div key={option.value} className={styles.plain}>
               <RadioGroupItem value={option.value} id={option.value} />

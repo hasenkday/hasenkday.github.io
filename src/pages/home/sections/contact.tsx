@@ -11,6 +11,7 @@ import { Label } from '@/components/ui/label'
 type ContactFormData = {
   name: string
   email: string
+  projectType: string[]
   message: string
 }
 
@@ -36,10 +37,22 @@ export default function ContactSection() {
 
         <form onSubmit={handleSubmit(onSubmit)} className="flex w-full max-w-md flex-col gap-4">
           <FormField label="Name" errorMessage={errors.name?.message}>
-            <InputField label="Email" type="email" error={!!errors.email} {...register('email')} />
+            <InputField
+              textAlign="center"
+              label="Name"
+              type="text"
+              error={!!errors.name}
+              {...register('name')}
+            />
           </FormField>
           <FormField label="Email" errorMessage={errors.email?.message}>
-            <InputField label="Email" type="email" error={!!errors.email} {...register('email')} />
+            <InputField
+              textAlign="center"
+              label="Email"
+              type="email"
+              error={!!errors.email}
+              {...register('email')}
+            />
           </FormField>
 
           <Label className="sr-only">What does your project involves?</Label>

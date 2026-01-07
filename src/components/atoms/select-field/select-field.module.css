@@ -10,12 +10,10 @@
   @apply border-tertiary bg-tertiary/10 text-dark relative flex h-12 items-center overflow-hidden rounded-lg border px-3 text-sm transition-shadow md:h-[52px] md:px-4;
 }
 
-/* Ring externo (igual input / textarea) */
 .trigger:focus-visible {
   box-shadow: 0 0 0 2px rgba(5, 4, 7, 1);
 }
 
-/* Placeholder */
 .trigger [data-placeholder] {
   @apply text-dark/40;
 }
@@ -30,7 +28,16 @@
   box-shadow: none;
 }
 
-/* Ajustes de texto ghost */
 .variant-ghost {
   @apply text-dark/60 text-sm;
+}
+
+/* ===== DROPDOWN CONTENT ===== */
+
+.content {
+  @apply bg-light border-tertiary rounded-lg border shadow-md;
+}
+
+.item {
+  @apply hover:bg-tertiary/10 focus:bg-tertiary/10 cursor-pointer rounded-md px-3 py-2 text-sm;
 }

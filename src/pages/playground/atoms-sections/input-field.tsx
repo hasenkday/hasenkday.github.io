@@ -7,13 +7,11 @@ import styles from '../playground.module.css'
 
 export default function PlaygroundAtomInputField() {
   const [textAlign, setTextAlign] = useState<'start' | 'center' | 'end'>('start')
-
-  const [hasValue, setHasValue] = useState(false)
   const [hasError, setHasError] = useState(false)
   const [disabled, setDisabled] = useState(false)
 
   return (
-    <section id="playground-atom-input-field" className={styles.root}>
+    <section id="playground-atom-input-field" className={styles.sectionRoot}>
       <h2>Input Field</h2>
 
       <div className={styles.contentWrapper}>
@@ -26,7 +24,6 @@ export default function PlaygroundAtomInputField() {
               textAlign={textAlign}
               error={hasError}
               disabled={disabled}
-              defaultValue={hasValue ? 'Filled input' : undefined}
             />
           </div>
         </div>
@@ -43,17 +40,6 @@ export default function PlaygroundAtomInputField() {
             ]}
             value={textAlign}
             onValueChange={setTextAlign}
-          />
-
-          <RadioField
-            label="Value"
-            variant="segmented"
-            options={[
-              { value: 'empty', label: 'Empty' },
-              { value: 'filled', label: 'Filled' },
-            ]}
-            value={hasValue ? 'filled' : 'empty'}
-            onValueChange={(v) => setHasValue(v === 'filled')}
           />
 
           <RadioField
