@@ -1,0 +1,17 @@
+@reference "../../../themes/index.css";
+
+.root {
+  @apply flex flex-col gap-4 px-6 py-10;
+}
+
+.contentWrapper {
+  @apply outline-dark/20 flex w-full flex-col gap-12 rounded-md p-12 outline md:flex-row;
+}
+
+.previewArea {
+  @apply flex w-full justify-center self-center;
+}
+
+.controlsArea {
+  @apply flex w-full flex-col gap-6;
+}

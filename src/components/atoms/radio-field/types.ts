@@ -1,14 +1,15 @@
-type RadioVariant = 'radio' | 'button'
+type RadioVariant = 'radio' | 'button' | 'segmented'
 
-type RadioOption = {
-  value: string
+type RadioOption<T extends string> = {
+  value: T
   label: string
 }
 
-export type RadioFieldProps = {
+export type RadioFieldProps<T extends string> = {
+  label?: string
   variant?: RadioVariant
-  options: RadioOption[]
-  value?: string
-  onValueChange?: (value: string) => void
+  options: RadioOption<T>[]
+  value: T
+  onValueChange: (value: T) => void
   className?: string
 }

@@ -1,31 +1,72 @@
 @reference "../../../themes/index.css";
 
 .root {
-  @apply focus-visible:ring-primary inline-flex items-center justify-center gap-2 rounded-md transition-colors focus-visible:ring-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50;
+  @apply inline-flex items-center justify-center gap-2 transition-colors focus-visible:ring-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50;
 }
 
-/* Variants */
-.primary {
-  @apply bg-primary text-light hover:bg-primary/90;
+/* ========== VARIANTS ========== */
+.fill {
+  @apply border border-transparent;
 }
 
-.secondary {
-  @apply bg-secondary text-light hover:bg-secondary/90;
+.outline {
+  @apply border bg-transparent;
 }
 
 .ghost {
-  @apply text-dark hover:bg-dark/10 bg-transparent;
+  @apply border border-transparent bg-transparent;
 }
 
-/* Sizes */
+/* ========== COLORS ========== */
+
+/* Dark */
+.dark.fill {
+  @apply bg-dark text-light hover:bg-dark/90;
+}
+
+.dark.outline {
+  @apply border-dark text-dark hover:bg-dark/5;
+}
+
+.dark.ghost {
+  @apply text-dark hover:bg-dark/5;
+}
+
+/* Primary */
+.primary.fill {
+  @apply bg-primary text-light hover:bg-primary/90;
+}
+
+.primary.outline {
+  @apply border-primary text-primary hover:bg-primary/5;
+}
+
+.primary.ghost {
+  @apply text-primary hover:bg-primary/5;
+}
+
+/* Secondary */
+.secondary.fill {
+  @apply bg-secondary text-light hover:bg-secondary/90;
+}
+
+.secondary.outline {
+  @apply border-secondary text-secondary hover:bg-secondary/5;
+}
+
+.secondary.ghost {
+  @apply text-secondary hover:bg-secondary/5;
+}
+
+/* ========== SIZES ========== */
 .md {
-  @apply h-10 px-4 text-sm;
+  @apply text-md font-secondary h-12 rounded-full px-6 font-black uppercase;
 }
 
 .sm {
-  @apply h-8 px-3 text-xs;
+  @apply font-primary h-10 rounded-md px-5 text-sm font-medium;
 }
 
 .icon {
-  @apply h-10 w-10 p-0;
+  @apply h-10 w-10 rounded-md p-2;
 }

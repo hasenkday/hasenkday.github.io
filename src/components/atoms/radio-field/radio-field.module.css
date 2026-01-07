@@ -1,5 +1,9 @@
 @reference "../../../themes/index.css";
 
+.label {
+  @apply text-dark/80 mb-1 text-sm;
+}
+
 /* ===== Group ===== */
 
 .group {
@@ -24,6 +28,43 @@
     transform 120ms ease-out;
 }
 
+/* ===== Segmented control ===== */
+.segmented {
+  @apply border-dark/20 bg-light relative flex h-10 overflow-hidden rounded-full border;
+}
+
+.segment {
+  @apply text-dark/80 font-secondary tracking-sm leading-sm relative z-10 flex-1 px-3 py-2 text-sm font-medium transition-colors;
+}
+
+.segment:hover {
+  @apply text-dark cursor-pointer;
+}
+
+.segment.active {
+  @apply text-light;
+}
+
+.indicator {
+  @apply bg-dark outline-light absolute top-0 left-0 h-full rounded-full outline-2 transition-transform duration-300 ease-out;
+}
+
+/* dynamic width */
+.segmented[data-count='2'] .indicator,
+.segmented[data-count='2'] .segment {
+  width: 50%;
+}
+.segmented[data-count='3'] .indicator,
+.segmented[data-count='3'] .segment {
+  width: 33.3333%;
+}
+.segmented[data-count='4'] .indicator,
+.segmented[data-count='4'] .segment {
+  width: 25%;
+}
+
+/* ===== States ===== */
+
 /* Focus ring */
 .button:focus-visible {
   box-shadow: 0 0 0 2px rgba(5, 4, 7, 1);
@@ -41,6 +82,7 @@
   @apply bg-tertiary/20;
 }
 
+/* Active */
 .button:active {
   transform: translateY(1px) scale(0.98);
 }

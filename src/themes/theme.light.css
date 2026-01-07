@@ -72,8 +72,9 @@
   --background-image-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
 
   /* SHAPE */
-  --radius-sm: 4px;
-  --radius-md: 8px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
   --radius-lg: 16px;
 
   /* ELEVATION / SHADOWS  */
