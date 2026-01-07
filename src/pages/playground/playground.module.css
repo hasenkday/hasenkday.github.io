@@ -1,4 +1,4 @@
-@reference "../../../themes/index.css";
+@reference "../../themes/index.css";
 
 .root {
   @apply flex flex-col gap-4 px-6 py-10;
@@ -9,7 +9,7 @@
 }
 
 .previewArea {
-  @apply flex w-full justify-center self-center;
+  @apply flex h-full min-h-[80px] w-full items-center justify-center self-center;
 }
 
 .controlsArea {
