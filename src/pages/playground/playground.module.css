@@ -1,11 +1,7 @@
 @reference "../../themes/index.css";
 
-.root {
-  @apply grid min-h-[700px] w-full lg:grid-cols-[300px_1fr];
-}
-
 .sectionRoot {
-  @apply flex w-full scroll-mt-24 flex-col gap-4 px-6 py-10;
+  @apply flex w-full scroll-mt-24 flex-col gap-4 px-4 py-10 md:px-12;
 }
 
 .contentWrapper {

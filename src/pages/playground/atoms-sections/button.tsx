@@ -9,7 +9,7 @@ import styles from '../playground.module.css'
 export default function PlaygroundAtomButton() {
   const [variant, setVariant] = useState<'fill' | 'outline' | 'ghost'>('fill')
   const [color, setColor] = useState<'dark' | 'primary' | 'secondary'>('dark')
-  const [size, setSize] = useState<'sm' | 'md' | 'icon'>('md')
+  const [size, setSize] = useState<'sm' | 'md' | 'icon'>('sm')
 
   const iconVariant = variant === 'fill' ? 'light' : 'dark'
 

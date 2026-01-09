@@ -18,6 +18,7 @@ export const router = createHashRouter([
       {
         path: '/cases/:slug',
         element: <CasePage />,
+        handle: { hideFooter: true },
       },
       {
         path: '/gallery',
@@ -26,6 +27,7 @@ export const router = createHashRouter([
       {
         path: '/playground',
         element: <PlaygroundPage />,
+        handle: { hideFooter: true },
       },
       {
         path: '*',
