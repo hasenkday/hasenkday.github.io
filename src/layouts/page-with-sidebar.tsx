@@ -13,9 +13,9 @@ export function PageWithSidebar({ sidebar, children }: PageWithSidebarProps) {
 
       {/* Content */}
       <div className="flex flex-col">
-        <main className="flex-1 pb-12">
+        <div className="flex-1 pb-12">
           <div className="mx-auto max-w-[84rem]">{children}</div>
-        </main>
+        </div>
 
         <Footer />
       </div>

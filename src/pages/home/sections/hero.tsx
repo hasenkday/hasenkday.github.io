@@ -1,6 +1,6 @@
 export default function HeroSection() {
   return (
-    <div className="w-full">
+    <section className="w-full">
       <div className="mx-auto flex max-w-[84rem] flex-col items-center gap-4 px-8 pt-12 pb-5 text-center md:px-12 md:pt-18 md:pb-8">
         <span className="text-subhead font-light">Hi there!</span>
         <h1 className="text-h2 leading-sm max-w-full font-normal md:max-w-[672px]">
@@ -8,6 +8,6 @@ export default function HeroSection() {
           things people can <strong>actually use</strong>.
         </h1>
       </div>
-    </div>
+    </section>
   )
 }

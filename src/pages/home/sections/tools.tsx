@@ -19,7 +19,7 @@ export default function ToolsSection() {
   })
 
   return (
-    <div id="tools" className="bg-dark w-full">
+    <section id="tools" className="bg-dark w-full">
       <div className="mx-auto max-w-[84rem] px-4 pt-14 pb-10 md:px-12 md:pt-30 md:pb-8">
         {/* header */}
         <div className="flex flex-col items-center gap-6 text-center">
@@ -81,6 +81,6 @@ export default function ToolsSection() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
