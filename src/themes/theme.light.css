@@ -15,19 +15,19 @@
   --font-fallback: Verdana, system-ui, sans-serif;
 
   /* Sizes */
-  --text-h1: clamp(1.5em, 2em, 2em); /* 24px → 32px */
-  --text-h2: clamp(1.25em, 1.5em, 1.5em); /* 20px → 24px */
-  --text-h3: clamp(1.125em, 1.25em, 1.25em); /* 18px → 20px */
-  --text-h4: clamp(1em, 1.125em, 1.125em); /* 16px → 18px */
-  --text-h5: clamp(0.875em, 1em, 1em); /* 14px → 16px */
+  --text-h1: clamp(1.5rem, 3.5vw, 2rem); /* 24 → 32 */
+  --text-h2: clamp(1.25rem, 2.8vw, 1.5rem); /* 20 → 24 */
+  --text-h3: clamp(1.125rem, 2.4vw, 1.25rem); /* 18 → 20 */
+  --text-h4: clamp(1rem, 2vw, 1.125rem); /* 16 → 18 */
+  --text-h5: clamp(0.875rem, 1.6vw, 1rem); /* 14 → 16 */
 
-  --text-subhead: clamp(1em, 1.125em, 1.125em); /* 16px → 18px */
-  --text-md: clamp(0.875em, 1em, 1em); /* 14px → 16px */
-  --text-sm: clamp(0.75em, 0.875em, 0.875em); /* 12px → 14px */
-  --text-xs: clamp(0.625em, 0.6875em, 0.6875em); /* 10px → 11px */
+  --text-subhead: clamp(1rem, 2vw, 1.125rem); /* 16 → 18 */
+  --text-md: clamp(0.875rem, 1.4vw, 1rem); /* 14 → 16 */
+  --text-sm: clamp(0.75rem, 1.2vw, 0.875rem); /* 12 → 14 */
+  --text-xs: clamp(0.625rem, 1vw, 0.6875rem); /* 10 → 11 */
 
-  --text-btn-md: clamp(0.875em, 1em, 1em); /* 14px → 16px */
-  --text-btn-sm: clamp(0.75em, 0.875em, 0.875em); /* 12px → 14px */
+  --text-btn-md: clamp(0.875rem, 1.1vw, 1rem); /* 14 → 16 */
+  --text-btn-sm: clamp(0.75rem, 1vw, 0.875rem); /* 12 → 14 */
 
   /* Letter spacing */
   --tracking-xs: 0.02em;
