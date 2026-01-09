@@ -29,8 +29,8 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="page-section">
-      <div className="section-container flex flex-col items-center gap-8 px-6 py-18 md:px-12">
+    <section id="contact" data-scroll-target className="w-full">
+      <div className="mx-auto flex max-w-[84rem] flex-col items-center gap-8 px-6 py-18 md:px-12">
         <h2 className="font-secondary max-w-[540px] text-center">
           Need a hand? Let’s <span className="font-primary">TALK</span>!
         </h2>

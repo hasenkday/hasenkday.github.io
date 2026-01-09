@@ -16,7 +16,7 @@ export default function PlaygroundAtomCheckboxField() {
   const [variant, setVariant] = useState<'default' | 'button'>('default')
 
   return (
-    <section id="playground-atom-checkbox-field" className={styles.sectionRoot}>
+    <section id="playground-atom-checkbox-field" data-scroll-target className={styles.sectionRoot}>
       <h2>Checkbox Field</h2>
 
       <div className={styles.contentWrapper}>

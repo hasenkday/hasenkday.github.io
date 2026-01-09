@@ -11,7 +11,7 @@ export default function PlaygroundAtomSwitchField() {
   const [isDark, setIsDark] = useState(false)
 
   return (
-    <section id="playground-atom-switch-field" className={styles.sectionRoot}>
+    <section id="playground-atom-switch-field" data-scroll-target className={styles.sectionRoot}>
       <h2>Switch Field</h2>
 
       <div className={styles.contentWrapper}>

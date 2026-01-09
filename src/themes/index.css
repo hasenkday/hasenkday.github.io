@@ -7,17 +7,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@layer utilities {
-  .page-section {
-    width: 100%;
-  }
-
-  .section-container {
-    max-width: 84rem; /* 1344px */
-    margin-inline: auto;
-  }
-}
-
 @layer base {
   h1 {
     font-size: var(--text-h1);
@@ -145,20 +134,13 @@ html {
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  transition:
-    background-color 200ms ease,
-    color 200ms ease;
 }
 
-* {
-  transition:
-    background-color 200ms ease,
-    color 200ms ease,
-    border-color 200ms ease;
-}
-
-html.theme-transition,
-html.theme-transition * {
+html,
+body,
+[data-theme],
+.theme-transition,
+.theme-transition * {
   transition:
     background-color 200ms ease,
     color 200ms ease,
@@ -170,4 +152,8 @@ html.theme-transition * {
   html.theme-transition * {
     transition: none !important;
   }
+}
+
+[data-scroll-target] {
+  scroll-margin-top: 96px;
 }

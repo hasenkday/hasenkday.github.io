@@ -11,8 +11,8 @@ export default function CasesSection() {
   const navigate = useNavigate()
 
   return (
-    <section id="cases" className="page-section">
-      <div className="section-container flex flex-col items-center gap-8 px-4 pt-8 pb-18 md:px-12 md:pb-30">
+    <section id="cases" data-scroll-target className="w-full">
+      <div className="mx-auto flex max-w-[84rem] flex-col items-center gap-8 px-4 pt-8 pb-18 md:px-12 md:pb-30">
         <h2 className="text-center">Cases</h2>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-8 md:gap-6 lg:grid-rows-[repeat(4,330px)]">

@@ -4,7 +4,7 @@ import styles from '../playground.module.css'
 
 export default function PlaygroundAtomSeparator() {
   return (
-    <section id="playground-atom-separator" className={styles.sectionRoot}>
+    <section id="playground-atom-separator" data-scroll-target className={styles.sectionRoot}>
       <h2>Separator</h2>
 
       <div className={styles.contentWrapper}>

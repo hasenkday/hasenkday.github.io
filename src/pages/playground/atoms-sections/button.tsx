@@ -14,7 +14,7 @@ export default function PlaygroundAtomButton() {
   const iconVariant = variant === 'fill' ? 'light' : 'dark'
 
   return (
-    <section id="playground-atom-button" className={styles.sectionRoot}>
+    <section id="playground-atom-button" data-scroll-target className={styles.sectionRoot}>
       <h2>Button</h2>
 
       <div className={styles.contentWrapper}>

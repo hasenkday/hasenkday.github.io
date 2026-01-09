@@ -1,5 +1,38 @@
 @reference "../../../themes/index.css";
 
 .root {
-  /* component styles */
+  @apply bg-light border-dark/10 sticky top-0 z-50 border-b;
+}
+
+.logo {
+  @apply font-primary tracking-sm leading-md font-semibold;
+}
+
+.wrapper {
+  @apply flex w-full items-center justify-between p-4 md:px-12 md:py-5;
+}
+
+.desktopNav {
+  @apply hidden items-center gap-1 lg:flex;
+}
+
+.mobileNav {
+  @apply flex items-center gap-2 lg:hidden;
+}
+
+/* ---------- Side Nav ---------- */
+.sideNavRoot {
+  @apply fixed inset-0 z-50;
+}
+
+.backdrop {
+  @apply bg-dark/40 absolute inset-0 transition-opacity duration-300;
+}
+
+.sidePanel {
+  @apply bg-light fixed top-0 right-0 flex h-full w-[280px] flex-col px-6 py-4 transition-transform duration-300 ease-out md:px-9 md:py-5;
+}
+
+.sidePanelHeader {
+  @apply flex shrink-0 items-center justify-end gap-2;
 }

@@ -4,8 +4,8 @@ export default function AboutSection() {
   const image =
     'https://images.unsplash.com/photo-1614583224978-f05ce51ef5fa?q=80&w=1272&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   return (
-    <div id="about" className="page-section bg-tertiary/20">
-      <div className="section-container flex flex-col items-center gap-12 px-6 pt-18 pb-14 md:flex-row md:px-12 md:py-30 lg:gap-12">
+    <div id="about" data-scroll-target className="bg-tertiary/20 w-full">
+      <div className="mx-auto flex max-w-[84rem] flex-col items-center gap-12 px-6 pt-18 pb-14 md:flex-row md:px-12 md:py-30 lg:gap-12">
         <div className="aspect-square w-[200px] overflow-hidden rounded-lg md:aspect-2/4 md:h-full md:w-full lg:aspect-square">
           <Image src={image} alt="" fit="cover" />
         </div>

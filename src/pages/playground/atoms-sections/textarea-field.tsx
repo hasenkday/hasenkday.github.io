@@ -11,7 +11,7 @@ export default function PlaygroundAtomTextareaField() {
   const [disabled, setDisabled] = useState(false)
 
   return (
-    <section id="playground-atom-textarea-field" className={styles.sectionRoot}>
+    <section id="playground-atom-textarea-field" data-scroll-target className={styles.sectionRoot}>
       <h2>Textarea Field</h2>
 
       <div className={styles.contentWrapper}>

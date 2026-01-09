@@ -2,50 +2,54 @@ import { useState } from 'react'
 
 import { Link } from 'react-router-dom'
 
-// import { Button } from '@/components/atoms/button'
+import { Button } from '@/components/atoms/button'
+import { SelectField } from '@/components/atoms/select-field'
 import { SwitchField } from '@/components/atoms/switch-field'
 import { SunIcon, MoonIcon } from '@/components/icons'
 import { toggleTheme } from '@/hooks/use-theme'
 
+import styles from './header.module.css'
 import { NavItems } from './nav-items'
-// import HeaderSideNav from './side-nav'
+import HeaderSideNav from './side-nav'
 
 export default function Header() {
-  // const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
   const [isDark, setIsDark] = useState(() => document.documentElement.classList.contains('dark'))
+
   function handleThemeChange(checked: boolean) {
     setIsDark(checked)
     toggleTheme(checked)
   }
 
   return (
-    <header className="bg-light border-dark/10 sticky top-0 z-50 border-b">
-      <div className="page-section flex items-center justify-between p-4 md:px-12 md:py-5">
-        {/* Logo / Brand */}
-        <div>
-          <span className="font-primary">Nadia Hase.</span>
-        </div>
+    <header className={styles.root}>
+      <div className={styles.wrapper}>
+        {/* Logo */}
+        <span className={styles.logo}>Nadia Hase.</span>
 
-        <nav className="hidden items-center gap-1 sm:flex">
+        {/* Desktop nav */}
+        <nav className={styles.desktopNav}>
           {NavItems.map((item) => {
             const Icon = item.icon
 
             return (
-              <Link
+              <Button
                 key={item.name}
-                to={item.url}
-                target={item.target}
-                state={{ scrollTo: item.scrollTo }}
-                className="text-dark text-btn-sm font-primary px-5 py-2 font-medium"
+                asChild
+                variant="ghost"
+                size="sm"
+                className={item.icon ? 'px-2!' : ''}
               >
-                {Icon && <Icon size={24} />}
-                {item.icon ? '' : item.name}
-              </Link>
+                <Link to={item.href}>
+                  {Icon && <Icon size={24} />}
+                  {!item.icon && item.name}
+                </Link>
+              </Button>
             )
           })}
 
           <SwitchField
-            className="ml-5"
+            className="ml-3"
             variant="icon"
             checked={isDark}
             onCheckedChange={handleThemeChange}
@@ -53,22 +57,45 @@ export default function Header() {
             onIcon={<MoonIcon />}
           />
 
-          {/* lang switcher */}
+          <SelectField
+            className="ml-3"
+            variant="ghost"
+            value="br"
+            options={[
+              { value: 'br', label: 'PT-BR' },
+              { value: 'us', label: 'EN-US' },
+            ]}
+          />
         </nav>
 
-        {/* Hamburger (mobile only) */}
-        <button
-          type="button"
-          aria-label="Open menu"
-          // onClick={() => setIsOpen(true)}
-          className="sm:hidden"
-        >
-          ☰
-        </button>
+        {/* Mobile actions */}
+        <div className={styles.mobileNav}>
+          <SwitchField
+            variant="icon"
+            checked={isDark}
+            onCheckedChange={handleThemeChange}
+            offIcon={<SunIcon />}
+            onIcon={<MoonIcon />}
+          />
+
+          <Button
+            aria-label="Open menu"
+            onClick={() => setIsOpen(true)}
+            variant="ghost"
+            size="icon"
+            className="self-end md:-mr-3"
+          >
+            ☰
+          </Button>
+        </div>
       </div>
 
-      {/* Overlay  */}
-      {/* {isOpen && <HeaderSideNav />} */}
+      <HeaderSideNav
+        open={isOpen}
+        isDark={isDark}
+        onThemeChange={handleThemeChange}
+        onClose={() => setIsOpen(false)}
+      />
     </header>
   )
 }

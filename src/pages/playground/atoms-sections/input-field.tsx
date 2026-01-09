@@ -11,7 +11,7 @@ export default function PlaygroundAtomInputField() {
   const [disabled, setDisabled] = useState(false)
 
   return (
-    <section id="playground-atom-input-field" className={styles.sectionRoot}>
+    <section id="playground-atom-input-field" data-scroll-target className={styles.sectionRoot}>
       <h2>Input Field</h2>
 
       <div className={styles.contentWrapper}>

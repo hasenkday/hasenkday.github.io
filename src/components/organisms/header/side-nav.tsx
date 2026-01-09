@@ -1,35 +1,56 @@
-// import { useState } from 'react'
+import { Button } from '@/components/atoms/button'
+import { SwitchField } from '@/components/atoms/switch-field'
+import { SunIcon, MoonIcon } from '@/components/icons'
+import { cn } from '@/lib/utils'
 
-// TODO: fix later
+import styles from './header.module.css'
+import { NavList } from './nav-list'
 
-export default function HeaderSideNav() {
-  // const [isOpen, setIsOpen] = useState(false)
+type HeaderSideNavProps = {
+  open: boolean
+  isDark: boolean
+  onThemeChange: (checked: boolean) => void
+  onClose: () => void
+}
 
+export default function HeaderSideNav({
+  open,
+  isDark,
+  onThemeChange,
+  onClose,
+}: HeaderSideNavProps) {
   return (
-    <div className="fixed inset-0 z-50">
+    <div
+      className={cn(styles.sideNavRoot, open ? 'pointer-events-auto' : 'pointer-events-none')}
+      aria-hidden={!open}
+    >
       {/* backdrop */}
-      <div
-        className="bg-dark/40 absolute inset-0"
-        // onClick={() => setIsOpen(false)}
-      />
+      <div className={cn(styles.backdrop, open ? 'opacity-100' : 'opacity-0')} onClick={onClose} />
 
       {/* side nav */}
-      <aside className="bg-light absolute top-0 right-0 h-full w-[220px]">
-        <div className="flex h-full flex-col p-6">
-          <button
-            type="button"
+      <aside className={cn(styles.sidePanel, open ? 'translate-x-0' : 'translate-x-full')}>
+        <div className={styles.sidePanelHeader}>
+          <SwitchField
+            variant="icon"
+            checked={isDark}
+            onCheckedChange={onThemeChange}
+            offIcon={<SunIcon />}
+            onIcon={<MoonIcon />}
+          />
+
+          <Button
             aria-label="Close menu"
-            // onClick={() => setIsOpen(false)}
-            className="cursor-pointer self-end"
+            onClick={onClose}
+            variant="ghost"
+            size="icon"
+            className="-mr-2 md:mr-0"
           >
             ✕
-          </button>
+          </Button>
+        </div>
 
-          <nav className="mt-8 flex flex-col gap-4">
-            <a href="#/">Home</a>
-            <a href="#/gallery">Gallery</a>
-            <a href="#/cases">Cases</a>
-          </nav>
+        <div className="flex-1 overflow-y-auto pb-6">
+          <NavList onNavigate={onClose} />
         </div>
       </aside>
     </div>

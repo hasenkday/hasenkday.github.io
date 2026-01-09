@@ -5,7 +5,7 @@ import styles from '../playground.module.css'
 
 export default function PlaygroundAtomSelectField() {
   return (
-    <section id="playground-atom-select-field" className={styles.sectionRoot}>
+    <section id="playground-atom-select-field" data-scroll-target className={styles.sectionRoot}>
       <h2>Select Field</h2>
 
       <div className={styles.contentWrapper}>

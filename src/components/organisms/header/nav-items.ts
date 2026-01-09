@@ -6,43 +6,39 @@ import type { IconProps } from '@/components/icons/_icon.types'
 const githubUrl = import.meta.env.VITE_GITHUB_URL
 const linkedinUrl = import.meta.env.VITE_LINKEDIN_URL
 
-export type NavItem = {
+type NavItem = {
   name: string
-  url: string
   target?: string
-  scrollTo?: string
+  href: string
   icon?: ComponentType<IconProps>
 }
 
 export const NavItems: NavItem[] = [
   {
     name: 'Cases',
-    url: '/',
-    scrollTo: 'cases',
+    href: '/#cases',
   },
   {
     name: 'About',
-    url: '/',
-    scrollTo: 'about',
+    href: '/#about',
   },
   {
     name: 'Contact',
-    url: '/',
-    scrollTo: 'contact',
+    href: '/#contact',
   },
   {
     name: 'Playground',
-    url: '/playground',
+    href: '/playground',
   },
   {
     name: 'Github',
-    url: githubUrl,
+    href: githubUrl,
     target: '_blank',
     icon: GithubIcon,
   },
   {
     name: 'Linkedin',
-    url: linkedinUrl,
+    href: linkedinUrl,
     target: '_blank',
     icon: LinkedinIcon,
   },

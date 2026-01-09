@@ -17,7 +17,7 @@ const VARIANTS = ['fill', 'outline', 'ghost'] as const
 
 export default function PlaygroundAtomTag() {
   return (
-    <section id="playground-atom-tag" className={styles.sectionRoot}>
+    <section id="playground-atom-tag" data-scroll-target className={styles.sectionRoot}>
       <h2>Tag</h2>
 
       <div className={styles.contentWrapper}>

@@ -1,22 +1,11 @@
 import { Button } from '@/components/atoms/button'
+import { scrollToId } from '@/lib/scrollTo'
 
 import styles from './page-summary.module.css'
 import type { SummaryItem, PageSummaryProps } from './types'
 
 export function PageSummary({ title, items, offset = 0 }: PageSummaryProps) {
   const isGrouped = !Array.isArray(items)
-
-  function scrollToSection(id: string) {
-    const el = document.getElementById(id)
-    if (!el) return
-
-    const y = el.getBoundingClientRect().top + window.pageYOffset - offset
-
-    window.scrollTo({
-      top: y,
-      behavior: 'smooth',
-    })
-  }
 
   function renderItem(item: SummaryItem) {
     return (
@@ -25,7 +14,7 @@ export function PageSummary({ title, items, offset = 0 }: PageSummaryProps) {
         variant="ghost"
         className={styles.item}
         size="sm"
-        onClick={() => scrollToSection(item.id)}
+        onClick={() => scrollToId(item.id, { offset })}
       >
         {item.label}
       </Button>

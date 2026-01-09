@@ -10,7 +10,7 @@ export default function PlaygroundAtomRadioField() {
   const [layout, setLayout] = useState<'grid' | 'list'>('grid')
 
   return (
-    <section id="playground-atom-radio-field" className={styles.sectionRoot}>
+    <section id="playground-atom-radio-field" data-scroll-target className={styles.sectionRoot}>
       <h2>Radio Field</h2>
 
       <div className={styles.contentWrapper}>
