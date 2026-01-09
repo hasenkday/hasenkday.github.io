@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
-import { Link } from 'react-router-dom'
-
 import { Button } from '@/components/atoms/button'
+import { NavLink } from '@/components/atoms/nav-link'
 import { SelectField } from '@/components/atoms/select-field'
 import { SwitchField } from '@/components/atoms/switch-field'
 import { SunIcon, MoonIcon } from '@/components/icons'
-import { toggleTheme } from '@/hooks/use-theme'
+import { toggleTheme } from '@/hooks/useTheme'
+import { scrollToTop } from '@/lib/scrollTo'
 
 import styles from './header.module.css'
 import { NavItems } from './nav-items'
@@ -25,28 +25,31 @@ export default function Header() {
     <header className={styles.root}>
       <div className={styles.wrapper}>
         {/* Logo */}
-        <span className={styles.logo}>Nadia Hase.</span>
+        <NavLink type="route" value="/" onNavigate={() => scrollToTop()}>
+          <span className={styles.logo}>Nadia Hase.</span>
+        </NavLink>
 
         {/* Desktop nav */}
         <nav className={styles.desktopNav}>
-          {NavItems.map((item) => {
-            const Icon = item.icon
-
-            return (
-              <Button
-                key={item.name}
-                asChild
-                variant="ghost"
-                size="sm"
-                className={item.icon ? 'px-2!' : ''}
+          {NavItems.map((item) => (
+            <Button
+              key={item.name}
+              asChild
+              variant="ghost"
+              size="sm"
+              className={item.icon ? 'px-2!' : ''}
+            >
+              <NavLink
+                type={item.type}
+                value={item.value}
+                target={item.target}
+                className={styles.navLink}
               >
-                <Link to={item.href}>
-                  {Icon && <Icon size={24} />}
-                  {!item.icon && item.name}
-                </Link>
-              </Button>
-            )
-          })}
+                {item.icon && <item.icon size={24} />}
+                {!item.icon && item.name}
+              </NavLink>
+            </Button>
+          ))}
 
           <SwitchField
             className="ml-3"

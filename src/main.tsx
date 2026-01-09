@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client'
 
 import App from './App'
 import './themes/index.css'
-import { initTheme } from './hooks/use-theme'
+import { initTheme } from './hooks/useTheme'
 
 initTheme()
 

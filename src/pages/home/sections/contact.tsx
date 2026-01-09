@@ -7,6 +7,8 @@ import { InputField } from '@/components/atoms/input-field'
 import { TextareaField } from '@/components/atoms/textarea-field'
 import { FormField } from '@/components/molecules/form-field'
 import { Label } from '@/components/ui/label'
+import { useRevealElement } from '@/hooks/revealBehavior'
+import { cn } from '@/lib/utils'
 
 type ContactFormData = {
   name: string
@@ -17,6 +19,7 @@ type ContactFormData = {
 
 export default function ContactSection() {
   const [projectType, setProjectType] = useState<string[]>([])
+  const { ref, revealClass } = useRevealElement<HTMLDivElement>()
 
   const {
     register,
@@ -30,7 +33,13 @@ export default function ContactSection() {
 
   return (
     <section id="contact" data-scroll-target className="w-full">
-      <div className="mx-auto flex max-w-[84rem] flex-col items-center gap-8 px-6 py-18 md:px-12">
+      <div
+        ref={ref}
+        className={cn(
+          revealClass,
+          'mx-auto flex max-w-[84rem] flex-col items-center gap-8 px-6 py-18 md:px-12'
+        )}
+      >
         <h2 className="font-secondary max-w-[540px] text-center">
           Need a hand? Let’s <span className="font-primary">TALK</span>!
         </h2>

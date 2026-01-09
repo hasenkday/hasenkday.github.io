@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 
+import { useRevealElement } from '@/hooks/revealBehavior'
 import { useMagneticTools } from '@/hooks/useMagneticTools'
 import { useMousePosition } from '@/hooks/useMousePosition'
 import { cn } from '@/lib/utils'
@@ -8,6 +9,7 @@ import { initialTools } from '@/pages/home/tools/data'
 export default function ToolsSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [activeStack, setActiveStack] = useState<string | null>(null)
+  const { ref, revealClass } = useRevealElement<HTMLDivElement>()
 
   const mouse = useMousePosition(containerRef)
 
@@ -20,7 +22,13 @@ export default function ToolsSection() {
 
   return (
     <section id="tools" className="bg-dark w-full">
-      <div className="mx-auto max-w-[84rem] px-4 pt-14 pb-10 md:px-12 md:pt-30 md:pb-8">
+      <div
+        ref={ref}
+        className={cn(
+          revealClass,
+          'mx-auto max-w-[84rem] px-4 pt-14 pb-10 md:px-12 md:pt-30 md:pb-8'
+        )}
+      >
         {/* header */}
         <div className="flex flex-col items-center gap-6 text-center">
           <h2 className="text-primary max-w-[540px]">
@@ -56,7 +64,7 @@ export default function ToolsSection() {
             scatter(e.clientX - rect.left, e.clientY - rect.top)
           }}
         >
-          {/* mão */}
+          {/* hand */}
           {activeStack && (
             <div
               className="pointer-events-none absolute text-3xl"

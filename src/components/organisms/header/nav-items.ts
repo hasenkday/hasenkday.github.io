@@ -8,37 +8,28 @@ const linkedinUrl = import.meta.env.VITE_LINKEDIN_URL
 
 type NavItem = {
   name: string
+  type: 'hash' | 'route' | 'external'
+  value: string
   target?: string
-  href: string
   icon?: ComponentType<IconProps>
 }
 
 export const NavItems: NavItem[] = [
-  {
-    name: 'Cases',
-    href: '/#cases',
-  },
-  {
-    name: 'About',
-    href: '/#about',
-  },
-  {
-    name: 'Contact',
-    href: '/#contact',
-  },
-  {
-    name: 'Playground',
-    href: '/playground',
-  },
+  { name: 'Cases', type: 'hash', value: 'cases' },
+  { name: 'About', type: 'hash', value: 'about' },
+  { name: 'Contact', type: 'hash', value: 'contact' },
+  { name: 'Playground', type: 'route', value: '/playground' },
   {
     name: 'Github',
-    href: githubUrl,
+    type: 'external',
+    value: githubUrl,
     target: '_blank',
     icon: GithubIcon,
   },
   {
     name: 'Linkedin',
-    href: linkedinUrl,
+    type: 'external',
+    value: linkedinUrl,
     target: '_blank',
     icon: LinkedinIcon,
   },

@@ -17,5 +17,11 @@ export function scrollToId(id: string, { offset = 0, behavior = 'smooth' }: Scro
 
 export function scrollToHash(hash: string, options?: ScrollToOptions) {
   if (!hash) return
-  scrollToId(hash.replace('#', ''), options)
+
+  const id = hash.replace(/^#/, '')
+  scrollToId(id, options)
+}
+
+export function scrollToTop() {
+  window.scrollTo({ top: 0 })
 }
