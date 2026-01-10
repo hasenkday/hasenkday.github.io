@@ -1,7 +1,6 @@
 import { Button } from '@/components/atoms/button'
 import { NavLink } from '@/components/atoms/nav-link'
 import { SelectField } from '@/components/atoms/select-field'
-import { cn } from '@/lib/utils'
 
 import { NavItems } from './nav-items'
 
